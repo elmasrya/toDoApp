@@ -22,6 +22,9 @@ ul, li {
   line-height: 30px;
   background-color: white;
   padding: 10px;
+  border-radius: 4px;
+  height: auto;
+  overflow: auto;
   position: absolute;
   top: 20px; bottom: 0; right: 20px; left: 20px;
 }
@@ -31,17 +34,22 @@ ul, li {
   li {
     display: inline-block;
     background-color: green;
-    width: 20%;
-    height: 75px;
-    margin: 2px;
+    margin: 0;
+    float: left;
+    border: 1px solid blue;
+    overflow: auto;
   }
 }
 
 .controls {
-  background-color: red;
+  background-color: blue;
   height: 140px;
   width: 100%;
   padding: 10px 20px;
   position: fixed;
   bottom: 0;
+
+  h2 {
+    color: white;  
+  }
 }
