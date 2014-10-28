@@ -4,23 +4,44 @@
 
 // Custom Styles
 body {
-  background: #fafafa;
+  background-color: blue;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+  background-color: white;
+  padding: 10px;
+  position: absolute;
+  top: 20px; bottom: 0; right: 20px; left: 20px;
+}
+
+.list {
+
+  li {
+    display: inline-block;
+    background-color: green;
+    width: 20%;
+    height: 75px;
+    margin: 2px;
   }
+}
+
+.controls {
+  background-color: red;
+  height: 140px;
+  width: 100%;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
 }
