@@ -11,11 +11,12 @@ and to monitor them according to the status whether complete/incomplete etc.
 * Run bower install
 
 
-#### Libraries used: *
+#### Libraries Used:
 * jQuery
 * Underscore
 * Mocha
 * Chai
 * Handlebars
 
-#### Authors: Richard Daniel and Andrew El-Masry
+#### Authors:
+Richard Daniel and Andrew El-Masry
