@@ -3,11 +3,17 @@
 (function () {
   'use strict';
 
-  describe('Give it some context', function () {
-    describe('maybe a bit more context here', function () {
-      it('should run here few assertions', function () {
+  describe('Item creation', function () {
 
-      });
+    it('should be an instance of toDo', function() {
+      expect(item).to.be.an.instanceof(toDo);
     });
-  });
+
+    it('should be incomplete by default', function() {
+      expect(item.status).to.equal('incomplete');
+    });
+
+  });//ends describe
+
+
 })();
