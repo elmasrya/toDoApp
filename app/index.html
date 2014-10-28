@@ -41,12 +41,26 @@
     </div>
 
     <div class="controls">
-      <h1>My To-Do's</h1>
-      <form id="add">
-          <input id="text" placeholder="Start typing..." value="" />
-          <button id="submit">Add</button>
-      </form>
+      <div class="input">
+        <h2>My To-Do's</h2>
+        <form id="add">
+            <input id="text" placeholder="Start typing..."/>
+            <button id="submit">Add</button>
+        </form>
+      </div>
+      <div class="filter">
+        <h4>Filter</h4>
+        <ul>
+          <li>Active</li>
+          <li>Completed</li>
+          <li>All</li>
+        </ul>
+        <button>Remove Completed</button>
+      </div>
     </div>
+    <script id="template" type="text/template">
+     <li><%=name %></li>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
