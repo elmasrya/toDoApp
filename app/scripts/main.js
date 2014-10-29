@@ -105,6 +105,26 @@ $('.list').on('click', 'li', function(event){
 
 $('#removeComp').on('click', function() {
 
+  // completedItems = _.findWhere(itemArray, { status:'complete' });
+
+
+  // console.log(completedItems);
+
+  _.each(itemArray, function(item){
+
+  var compId = item._id;
+
+  if (item.status==='complete'){
+  $.ajax({
+    type: 'DELETE',
+    url: toDoServer + '/' + compId,
+    data: item
+  });
+};
+  console.log(item);
+
+});
+
   $('.complete').remove();/*This will remove all the list items with the class of complete*/
 
 });
