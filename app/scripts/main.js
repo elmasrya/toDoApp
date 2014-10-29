@@ -35,6 +35,12 @@ var render = _.template(itemTemplate);
    event.preventDefault();
 
    var inputVal=$('#text').val();
+   if(inputVal==0) {
+     alert("You must enter an input")
+   } else{
+
+
+
 
 
   item = new toDo({
@@ -46,6 +52,5 @@ var render = _.template(itemTemplate);
   itemArray.push(item);
 
   $('.list').append(item.listItem);
-
-
+}
 });
