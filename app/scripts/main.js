@@ -109,14 +109,25 @@ $('#removeComp').on('click', function() {
     var compId = item._id;
 
     if (item.status==='complete'){
+
+      // Delete from server
       $.ajax({
         type: 'DELETE',
         url: toDoServer + '/' + compId,
         data: item
       });
+
+      // Delete from itemArray
+      var index = itemArray.indexOf(item);
+      itemArray.splice(index, 1);
+      compCount--;
+
     };
 
   });
+
+  $('.compCount').html(compCount);
+  $('.totalCount').html(itemArray.length);
 
   $('.complete').remove();/*This will remove all the list items with the class of complete*/
 

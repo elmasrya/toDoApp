@@ -54,7 +54,7 @@ header {
   height: auto;
   overflow: auto;
   position: absolute;
-  top: 120px; bottom: 0; right: 20px; left: 20px;
+  top: 116px; bottom: 0; right: 20px; left: 20px;
 }
 
 .list {
@@ -62,31 +62,37 @@ header {
   li {
     font-size: 1.8em;
     line-height: 1.4em;
+    min-height: 40px;
     padding: .4em 1em;
     border-radius: 4px;
+    border: 2px solid $white;
     display: inline-block;
     margin: 1px;
     float: left;
     overflow: auto;
     color: $white;
-
-    &:hover {
-      opacity: .7;
-    }
   }
 
   .complete {
     background-color: $red;
+
+    &:hover {
+      border: 2px solid $red;
+    }
   }
 
   .incomplete {
     background-color: $navy;
+
+    &:hover {
+      border: 2px solid $navy;
+    }
   }
 }
 
 .controls {
   background-color: $blue;
-  height: 110px;
+  /* height: 110px; */
   width: 100%;
   padding: 16px 20px;
   position: absolute;
@@ -108,7 +114,8 @@ header {
       float: left;
       background-color: $white;
       color: $navy;
-      border: 1px solid $grey;
+      border: 2px solid $grey;
+      border-right: 2px solid $grey;
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
     }
@@ -119,17 +126,21 @@ header {
       height: 100%;
       width: 18%;
       float: left;
-      border: 1px solid $grey;
+      border: 2px solid $grey;
+      border-left: 0;
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
       background-color: $navy;
       color: $white;
+
+      &:hover {
+        background-color: $blue;
+      }
     }
   }
 
   .filter {
     width: 35%;
-    height: 70px;
     float: right;
     overflow: auto;
 
@@ -160,16 +171,6 @@ header {
       border-radius: 4px;
       text-align: center;
 
-      &:nth-child(1){
-        color: $white;
-        float: left;
-        text-align: left;
-        margin-left: 0;
-        padding: 6px 0px;
-        background-color: $blue;
-        border: none;
-      }
-
       &:nth-child(4){
         margin-left: 0;
       }
@@ -185,12 +186,14 @@ header {
       border: 1px solid $grey;
       border-radius: 4px;
       color: $white;
+
+      &:hover {
+        background-color: $blue;
+      }
     }
   }
 
   @media ( max-width: 600px){
-
-    height: 150px;
 
     .inputForm {
       width: 100%;
@@ -217,16 +220,10 @@ header {
         height: 100%;
         padding-top: 10px;
       }
-
-      li:nth-child(1){
-        display: none;
-      }
     }
   }
 
   @media ( max-width: 400px){
-
-    height: 110px;
 
     .inputForm {
       height: 50px;
