@@ -6,6 +6,8 @@
 // Partials
 @import 'colors';
 
+$brick-font: 'Arvo', serif;
+
 // Custom Styles
 body {
   background-color: $blue;
@@ -30,7 +32,18 @@ header {
   background-color: $navy;
   color: $white;
   text-align: center;
+
+  h1 {
+    font-family: $brick-font;
+    font-size: 4em;
+    display: inline-block;
+  }
+
+  .count {
+    display: inline-block;
+  }
 }
+
 .container {
   line-height: 30px;
   background-color: $white;
