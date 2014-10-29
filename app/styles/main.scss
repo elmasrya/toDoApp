@@ -32,8 +32,6 @@ header {
   text-align: center;
 }
 .container {
-  font-size: 18px;
-  font-weight: 200;
   line-height: 30px;
   background-color: $white;
   padding: 10px;
@@ -47,16 +45,20 @@ header {
 .list {
 
   li {
+    font-size: 1.8em;
+    line-height: 1.4em;
+    padding: .4em 1em;
+    border-radius: 4px;
     background-color: $navy;
     display: inline-block;
-    margin: 0;
+    margin: 1px;
     float: left;
-    border: 1px solid $white;
     overflow: auto;
     color: $white;
-    text-align: center;
-    width: 100px;
-    height: 100px;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 
   .complete {
@@ -86,6 +88,8 @@ header {
       padding: 0 20px;
       font-size: 1.8em;
       float: left;
+      background-color: $white;
+      color: $navy;
       border: 1px solid $grey;
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
@@ -163,6 +167,25 @@ header {
       border: 1px solid $grey;
       border-radius: 4px;
       color: $white;
+    }
+  }
+
+  @media ( max-width: 600px){
+
+    .controls {
+      height: 150px;
+    }
+
+    .inputForm {
+      width: 100%;
+
+      button {
+        width: 20%;
+      }
+    }
+
+    .filter {
+      width: 100%;
     }
   }
 
