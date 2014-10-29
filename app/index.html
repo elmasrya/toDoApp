@@ -49,7 +49,11 @@
     </div>
 
     <script id="template" type="text/template">
-      <li id="<%= _id %>"><%=name %></li>
+    <% if(status === 'complete'){ %>
+      <li id="<%= _id %>" class="complete"><%=name %></li>
+      <% } else { %>
+        <li id="<%= _id %>"><%=name %></li>
+      <% }; %>
     </script>
 
     <!-- build:js scripts/vendor.js -->
