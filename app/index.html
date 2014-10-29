@@ -43,9 +43,9 @@
       <div class="filter">
         <ul>
           <li>Filter:</li>
-          <li>Active</li>
-          <li>Complete</li>
-          <li>All</li>
+          <li id="activeF">Active</li>
+          <li id="completeF">Complete</li>
+          <li id="allF">All</li>
         </ul>
         <button id='removeComp'>Remove Completed</button>
       </div>
@@ -55,7 +55,7 @@
     <% if(status === 'complete'){ %>
       <li id="<%= _id %>" class="complete"><%=name %></li>
       <% } else { %>
-        <li id="<%= _id %>"><%=name %></li>
+        <li id="<%= _id %>" class="incomplete"><%=name %></li>
       <% }; %>
     </script>
 
