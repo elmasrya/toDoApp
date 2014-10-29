@@ -31,6 +31,7 @@ header {
   top: 0;
   background-color: $navy;
   color: $white;
+  border-bottom: 1px solid $grey;
   text-align: center;
 
   h1 {
@@ -49,6 +50,7 @@ header {
   background-color: $white;
   padding: 10px;
   border-radius: 4px;
+  border: 1px solid $grey;
   height: auto;
   overflow: auto;
   position: absolute;
@@ -87,7 +89,7 @@ header {
   height: 110px;
   width: 100%;
   padding: 16px 20px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   overflow: auto;
 
@@ -188,9 +190,7 @@ header {
 
   @media ( max-width: 600px){
 
-    .controls {
-      height: 150px;
-    }
+    height: 150px;
 
     .inputForm {
       width: 100%;
@@ -202,7 +202,55 @@ header {
 
     .filter {
       width: 100%;
+
+      button {
+        width: 50%;
+      }
+
+      ul {
+        width: 50%;
+        height: 36px;
+        margin-top: 8px;
+      }
+
+      li {
+        height: 100%;
+        padding-top: 10px;
+      }
+
+      li:nth-child(1){
+        display: none;
+      }
     }
   }
 
+  @media ( max-width: 400px){
+
+    height: 110px;
+
+    .inputForm {
+      height: 50px;
+
+      input {
+        width: 65%;
+        font-size: 1.6em;
+      }
+
+      button {
+        width: 35%;
+        font-size: 1.4em;
+      }
+    }
+
+    .filter {
+
+      ul {
+        display: none;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
 }
