@@ -20,6 +20,15 @@ ul, li, input, button, form {
   padding: 0;
 }
 
+header {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: $navy;
+  color: $white;
+  text-align: center;
+}
 .container {
   font-size: 18px;
   font-weight: 200;
@@ -30,7 +39,7 @@ ul, li, input, button, form {
   height: auto;
   overflow: auto;
   position: absolute;
-  top: 20px; bottom: 0; right: 20px; left: 20px;
+  top: 120px; bottom: 0; right: 20px; left: 20px;
 }
 
 .list {
