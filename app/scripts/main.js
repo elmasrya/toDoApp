@@ -8,17 +8,28 @@ var toDo = function(options){
 
 var item;
 var itemArray;
+var compCount=0;
 
 
-var itemTemplate=$('#template').html();
+var itemTemplate=$('#template1').html();
 var render = _.template(itemTemplate);
+
+// var countTemplate=$('#template2').html();
+// var renderCount = _.template(countTemplate);
 
 // Put all exisiting toDo items on page
 $.getJSON(toDoServer).done( function(data){
   itemArray = data;
   _.each(itemArray, function(item){
+    if (item.status==='complete') {
+      compCount++;
+    };
     $('.list').append(render(item));
   });
+  $('.compCount').html(compCount);
+  $('.totalCount').html(itemArray.length);
+  console.log("compCount: "+ compCount);
+  console.log("itemArray: " + itemArray.length);
 });
 
 $('#add').on('submit', function(event){
@@ -57,6 +68,7 @@ var markedItem;
 // Mark as completed
 $('.list').on('click', 'li', function(event){
 
+
   event.preventDefault();
 
   var itemID = $(this).attr('id');
@@ -69,11 +81,18 @@ $('.list').on('click', 'li', function(event){
   // if incomplete, mark as complete. Otherwise, mark as incomplete.
   if(markedItem.status === 'incomplete'){
     markedItem.status = 'complete';
-    console.log(markedItem);
+    compCount++;
+    $('.compCount').html(compCount);
+    $('.totalCount').html(itemArray.length);
+
+
   }
   else {
     markedItem.status = 'incomplete';
-    console.log(markedItem);
+    compCount--;
+    $('.compCount').html(compCount);
+    $('.totalCount').html(itemArray.length);
+
   }
 
   $.ajax({
@@ -102,7 +121,7 @@ $('#removeComp').on('click', function() {
     data: item
   });
 };
-  console.log(item);
+
 
 });
 
