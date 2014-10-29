@@ -11,7 +11,7 @@ var toDo = function(options){
   var options=options || {};
   this.listItem= options.listItem;
   this.name=options.name;
-  this.status=options.status || 'incomplete';
+  this.status=options.status;
 }
 
 
