@@ -74,3 +74,9 @@ $('.list').on('click', 'li', function(){
     console.log(this);
   }
 });
+
+  $('#removeComp').on('click', function() {
+
+    $('.complete').remove();/*This will remove all the list items with the class of complete*/
+
+  });
