@@ -25,7 +25,9 @@
 
     <header>
       <h1>To Do App</h1>
-      <div class="count">4 out of 20 completed</div>
+      <div class="count">
+        <span class="compCount"></span> out of <span class="totalCount"></span>
+      </div>
     </header>
 
     <div class="container">
@@ -51,13 +53,17 @@
       </div>
     </div>
 
-    <script id="template" type="text/template">
+    <script id="template1" type="text/template">
     <% if(status === 'complete'){ %>
       <li id="<%= _id %>" class="complete"><%=name %></li>
       <% } else { %>
         <li id="<%= _id %>"><%=name %></li>
       <% }; %>
     </script>
+
+    <!-- /*<script id="template2" type="text/template">
+      <span><%= compCount %> out of <%=itemArray.length%></span>
+    </script>*/ -->
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
