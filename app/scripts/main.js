@@ -12,7 +12,9 @@ var toDo = function(options){
   this.listItem= options.listItem;
   this.name=options.name;
   this.status=options.status;
-}
+
+};
+
 
 
 var item;
@@ -33,6 +35,7 @@ $('#add').on('submit', function(event){
 
    });
 
+   // Store newly created item instance in an array, 'itemArray'
   itemArray.push(item);
 
   $('.list').append(item.listItem);
@@ -49,18 +52,25 @@ $('#add').on('submit', function(event){
     $(newItem).css({'height' : itemHeight + 'px', 'width': itemHeight + 'px'});
   }, 100);
 
-  // Mark as completed
-  $('.list').on('click', 'li', function(){
+});
 
-    markedItem = _.findWhere(itemArray, { listItem: $(this)[0] });
 
-    if(markedItem.status === 'incomplete'){
-      $(this).css('background-color', 'red');
-      markedItem.status = 'complete';
-    }
-    else {
-      $(this).css('background-color', 'green');
-      markedItem.status = 'incomplete';
-    };
-  });
+// Mark as completed
+$('.list').on('click', 'li', function(){
+  // event.preventDefault();
+
+  $(this).toggleClass('complete');
+
+  // Find the object in the itemArray array that has matching values to the one clicked on.
+  markedItem = _.findWhere(itemArray, { listItem: $(this)[0] });
+
+  // if incomplete, mark as complete. Otherwise, mark as incomplete.
+  if(markedItem.status === 'incomplete'){
+    this.status = 'complete';
+    console.log(this);
+  }
+  else {
+    this.status = 'incomplete';
+    console.log(this);
+  }
 });
