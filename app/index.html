@@ -24,27 +24,14 @@
   <body>
 
     <div class="container">
-      <ul class="list">
-        <li>Purchase dog</li>
-        <li>Purchase carpet cleaner</li>
-        <li>Sell dog</li>
-        <li>Purchase dog</li>
-        <li>Purchase carpet cleaner</li>
-        <li>Sell dog</li>
-        <li>Purchase dog</li>
-        <li>Purchase carpet cleaner</li>
-        <li>Sell dog</li>
-        <li>Purchase dog</li>
-        <li>Purchase carpet cleaner</li>
-        <li>Sell dog</li>
-      </ul>
+      <ul class="list"></ul>
     </div>
 
     <div class="controls">
       <div class="input">
         <h2>My To-Do's</h2>
         <form id="add">
-            <input id="text" placeholder="What needs doing?" value="" />
+            <input id="text" placeholder="What needs doing?"/>
             <button id="submit">Add</button>
         </form>
       </div>
@@ -58,6 +45,10 @@
         <button>Remove Completed</button>
       </div>
     </div>
+
+    <script id="template" type="text/template">
+      <li><%=name %></li>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
