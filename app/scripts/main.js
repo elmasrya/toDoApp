@@ -12,7 +12,9 @@ var toDo = function(options){
   this.listItem= options.listItem;
   this.name=options.name;
   this.status=options.status;
+
 };
+
 
 
 var item;
@@ -73,3 +75,8 @@ $('.list').on('click', 'li', function(){
   }
 });
 
+  $('#removeComp').on('click', function() {
+
+    $('.complete').remove();/*This will remove all the list items with the class of complete*/
+
+  });
