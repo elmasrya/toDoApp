@@ -11,7 +11,7 @@ body {
   box-sizing: border-box;
 }
 
-ul, li {
+ul, li, input, button, form {
   margin: 0;
   padding: 0;
 }
@@ -38,6 +38,8 @@ ul, li {
     float: left;
     border: 1px solid blue;
     overflow: auto;
+    color: white;
+    text-align: center;
   }
 }
 
@@ -45,11 +47,45 @@ ul, li {
   background-color: blue;
   height: 140px;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 30px;
   position: fixed;
   bottom: 0;
+  overflow: auto;
 
-  h2 {
-    color: white;  
+  .input {
+    width: 65%;
+    float: left;
+
+    h2 {
+      color: white;
+    }
+
+    form {
+      width: 60%;
+      height: 60px;
+    }
+
+    input {
+      width: 80%;
+      height: 100%;
+      padding: 0 20px;
+      font-size: 1.8em;
+    }
+
+    button {
+      height: 100%;
+      width: 18%;
+    }
   }
+
+  .filter {
+    width: 35%;
+    float: right;
+
+    button {
+      height: 40px;
+      width: 100%;
+    }
+  }
+
 }
