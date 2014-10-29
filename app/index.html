@@ -33,18 +33,15 @@
     </div>
 
     <div class="controls">
-      <div class="input">
-        <h2>My To-Do's</h2>
-        <form id="add">
-            <input id="text" placeholder="What needs doing?"/>
-            <button id="submit">Add</button>
-        </form>
-      </div>
+      <form id="add" class="inputForm">
+          <input id="text" placeholder="What needs doing?"/>
+          <button id="submit">Add</button>
+      </form>
       <div class="filter">
-        <h4>Filter</h4>
         <ul>
+          <li>Filter:</li>
           <li>Active</li>
-          <li>Completed</li>
+          <li>Complete</li>
           <li>All</li>
         </ul>
         <button id='removeComp'>Remove Completed</button>
