@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>toDoApp</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <h1>Bricks</h1>
+      <div class="count">
+        <span class="compCount"></span> of <span class="totalCount"></span> completed
+      </div>
+    </header>
+
+    <div class="container">
+      <ul class="list"></ul>
+    </div>
+
+    <div class="controls">
+      <form id="add" class="inputForm">
+          <input id="text" placeholder="What needs doing?"/>
+          <button id="submit">Add</button>
+      </form>
+      <div class="filter">
+        <ul>
+          <li id="activeF">Active</li>
+          <li id="completeF">Complete</li>
+          <li id="allF" class="active">All</li>
+        </ul>
+        <button id='removeComp'>Remove Completed</button>
+      </div>
+    </div>
+
+    <script id="template1" type="text/template">
+    <% if(status === 'complete'){ %>
+      <li id="<%= _id %>" class="complete"><%=name %></li>
+      <% } else { %>
+        <li id="<%= _id %>" class="incomplete"><%=name %></li>
+      <% }; %>
+    </script>
+
+    <!-- /*<script id="template2" type="text/template">
+      <span><%= compCount %> out of <%=itemArray.length%></span>
+    </script>*/ -->
+
+    <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
