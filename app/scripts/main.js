@@ -9,6 +9,7 @@ var toDo = function(options){
 var item;
 var itemArray;
 var compCount=0;
+var index;
 
 
 var itemTemplate=$('#template1').html();
@@ -101,8 +102,6 @@ $('.list').on('click', 'li', function(event){
 
 });
 
-var index;
-
 $('#removeComp').on('click', function() {
 
   _.each(itemArray, function(item){
@@ -118,13 +117,17 @@ $('#removeComp').on('click', function() {
         type: 'DELETE',
         url: toDoServer + '/' + compId,
         data: item
-      }).done( function(data){
-
-        // Delete from itemArray
-        index = itemArray.indexOf(data);
-        itemArray.splice(index, 1);
-        $('.totalCount').html(itemArray.length);
-
+      }).done( function(){
+        $.ajax({
+          type: 'GET',
+          url: toDoServer,
+          success: function(data) {
+            itemArray = data;
+          }
+        }).done( function(data){
+          $('.totalCount').html(itemArray.length);
+          $('.list').append(render(data));
+        });
       });
 
     };
