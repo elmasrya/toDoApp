@@ -21,13 +21,15 @@ var render = _.template(itemTemplate);
 $.getJSON(toDoServer).done( function(data){
   itemArray = data;
   _.each(itemArray, function(item){
-    // if (item.status==='complete') {
-    //   compCount++;
-    // };
+    if (item.status==='complete') {
+      compCount++;
+    };
     $('.list').append(render(item));
   });
   $('.compCount').html(compCount);
   $('.totalCount').html(itemArray.length);
+  console.log("compCount: "+ compCount);
+  console.log("itemArray: " + itemArray.length);
 });
 
 $('#add').on('submit', function(event){
@@ -51,7 +53,6 @@ $('#add').on('submit', function(event){
 
     // Store newly created item instance in an array, 'itemArray'
     itemArray.push(data);
-
     $('.totalCount').html(itemArray.length);
 
     $('.list').append(render(data));
@@ -101,8 +102,6 @@ $('.list').on('click', 'li', function(event){
 
 });
 
-var index;
-
 $('#removeComp').on('click', function() {
 
   _.each(itemArray, function(item){
@@ -110,28 +109,14 @@ $('#removeComp').on('click', function() {
     var compId = item._id;
 
     if (item.status==='complete'){
-
-      compCount--;
-
-      // Delete from server
       $.ajax({
         type: 'DELETE',
         url: toDoServer + '/' + compId,
         data: item
-      }).done( function(data){
-
-        // Delete from itemArray
-        index = itemArray.indexOf(data);
-        itemArray.splice(index, 1);
-        $('.totalCount').html(itemArray.length);
-
       });
-
     };
 
   });
-
-  $('.compCount').html(compCount);
 
   $('.complete').remove();/*This will remove all the list items with the class of complete*/
 
