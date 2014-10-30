@@ -34,9 +34,17 @@ $.getJSON(toDoServer).done( function(data){
 $('#add').on('submit', function(event){
   event.preventDefault();
 
+
+
   var inputField = this;
 
   var inputVal=$('#text').val();
+
+  if (inputVal==0) {
+
+    alert("Needs an input value you moron!!!");
+
+  } else{
 
   // Create a new instance
   item = new toDo({
@@ -61,6 +69,8 @@ $('#add').on('submit', function(event){
     $(inputField)[0].reset();
 
   });
+
+};
 
 });
 
