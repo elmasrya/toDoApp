@@ -23,7 +23,7 @@ $.getJSON(toDoServer).done( function(data){
   itemArray = data;
   _.each(itemArray, function(item){
     // if (item.status==='complete') {
-    //   compCount++;
+    //  compCount++;
     // };
     $('.list').append(render(item));
   });
@@ -32,25 +32,33 @@ $.getJSON(toDoServer).done( function(data){
 });
 
 $('#add').on('submit', function(event){
-   event.preventDefault();
+  event.preventDefault();
 
-   var inputField = this;
 
-   var inputVal=$('#text').val();
 
-   // Create a new instance
-   item = new toDo({
-     name: inputVal
-   });
+  var inputField = this;
 
-   // Send item to server
-   $.ajax({
-     type: 'POST',
-     url: toDoServer,
-     data: item
-   }).done( function(data){
+  var inputVal=$('#text').val();
 
-     // Store newly created item instance in an array, 'itemArray'
+  if (inputVal==0) {
+
+    alert("Needs an input value you moron!!!");
+
+  } else{
+
+  // Create a new instance
+  item = new toDo({
+    name: inputVal
+  });
+
+  // Send item to server
+  $.ajax({
+    type: 'POST',
+    url: toDoServer,
+    data: item
+  }).done( function(data){
+
+    // Store newly created item instance in an array, 'itemArray'
     itemArray.push(data);
 
     $('.totalCount').html(itemArray.length);
@@ -60,7 +68,9 @@ $('#add').on('submit', function(event){
     // Reset my form
     $(inputField)[0].reset();
 
-   });
+  });
+
+};
 
 });
 
