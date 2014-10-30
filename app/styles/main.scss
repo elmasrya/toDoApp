@@ -62,9 +62,18 @@ header {
   border-radius: 4px;
   border: 1px solid $grey;
   height: auto;
-  overflow: auto;
+  overflow: scroll;
   position: absolute;
-  top: 116px; bottom: 0; right: 20px; left: 20px;
+  top: 116px; bottom: 102px; right: 20px; left: 20px;
+
+  @media ( max-width: 600px){
+    bottom: 146px;
+  }
+
+  @media ( max-width: 400px){
+    bottom: 126px;
+  }
+
 }
 
 .list {
