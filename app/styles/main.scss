@@ -63,6 +63,7 @@ header {
   border: 1px solid $grey;
   height: auto;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   position: absolute;
   top: 116px; bottom: 102px; right: 20px; left: 20px;
 
