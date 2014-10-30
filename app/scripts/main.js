@@ -141,15 +141,24 @@ $('#removeComp').on('click', function() {
 });
 
 // Filtering
-$('#completeF').on('click', function(){
+$('.filter').on('click', '#completeF', function(){
+  $(this).addClass('active');
+  $('#activeF').removeClass('active');
+  $('#allF').removeClass('active');
   $('.incomplete').css('display', 'none');
   $('.complete').css('display', 'inline-block');
 });
-$('#activeF').on('click', function(){
+$('.filter').on('click', '#activeF', function(){
+  $(this).addClass('active');
+  $('#completeF').removeClass('active');
+  $('#allF').removeClass('active');
   $('.complete').css('display', 'none');
   $('.incomplete').css('display', 'inline-block');
 });
-$('#allF').on('click', function(){
+$('.filter').on('click', '#allF', function(){
+  $(this).addClass('active');
+  $('#completeF').removeClass('active');
+  $('#activeF').removeClass('active');
   $('.incomplete').css('display', 'inline-block');
   $('.complete').css('display', 'inline-block');
 });
